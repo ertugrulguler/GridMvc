@@ -1,0 +1,10 @@
+﻿@using GridMvc.Html
+@model List<GridMvc.UI.Models.Foo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Grid(Model).Columns(i=> { i.Add(foo => foo.Title).Titled("Custom column title").SetWidth(110); 
+                 i.Add(foo => foo.Description).Sortable(true);  }).WithPaging(20) 
